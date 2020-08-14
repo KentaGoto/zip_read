@@ -8,4 +8,4 @@ Displays the structure of files and folders in the zip.
 
 ## Requires  
 - Windows
-- Python 3.7 or above
+- Python3
