@@ -20,14 +20,15 @@ if __name__ == '__main__':
     while True:
         event, values = window.read()
 
-        # ウィンドウの[x]で終了
+        # Exit with [x] in the window
         if event is None:
             break
 
         if event == 'Run':
             f = values[0]
 
-            # 行頭と行末にダブルクォーテーションがあったら削除
+            # If there are double quotation marks at the beginning and 
+            # end of a line, delete.
             f = re.sub('^\"', '', f)
             f = re.sub('\"$', '', f)
 
@@ -38,8 +39,8 @@ if __name__ == '__main__':
             z = zipfile.ZipFile(f)
             fnames = []
             for i in z.namelist():
-                # Windows環境ではこのようにエンコード・デコードしないと
-                # 文字化けした。
+                # In Windows environment, if you don't encode/decode like this, 
+                # the characters are corrupted.
                 name = i.encode('cp437').decode('cp932')
                 fnames.append(name)
             results = '\n'.join(fnames)
