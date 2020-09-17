@@ -9,3 +9,6 @@ Displays the structure of files and folders in the zip.
 ## Requires  
 - Windows
 - Python3
+
+## License
+MIT
