@@ -12,3 +12,6 @@ Displays the structure of files and folders in the zip.
 
 ## License
 MIT
+
+## Author  
+Kenta Goto
