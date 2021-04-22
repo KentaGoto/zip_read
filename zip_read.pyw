@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import sys
 import zipfile
 import re
@@ -38,10 +40,8 @@ if __name__ == '__main__':
 
             z = zipfile.ZipFile(f)
             fnames = []
-            for i in z.namelist():
-                # In Windows environment, if you don't encode/decode like this, 
-                # the characters are corrupted.
-                name = i.encode('cp437').decode('cp932')
+            for i in z.infolist():
+                name = i.orig_filename.encode('cp437').decode('cp932', errors="ignore")
                 fnames.append(name)
             results = '\n'.join(fnames)
             window['-RESULTS-'].update(results)
