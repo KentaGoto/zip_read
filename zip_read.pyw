@@ -28,9 +28,6 @@ if __name__ == '__main__':
 
         if event == 'Run':
             f = values[0]
-
-            # If there are double quotation marks at the beginning and 
-            # end of a line, delete.
             f = re.sub('^\"', '', f)
             f = re.sub('\"$', '', f)
 
